@@ -24,5 +24,4 @@ Plus orienté vers le code Java
 * Windows Builder (Package pour faire des GUI)
 * [Sérialisation](https://igm.univ-mlv.fr/~chilowi/lectures/content/java/cours/storage/serialization.std.html)
 
-## Cahier des charges (Site Intranet)
-*En cours de développement ...*
+
