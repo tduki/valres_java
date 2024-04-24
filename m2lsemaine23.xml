@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- Généré le :  jeu. 16 juin 2023 à 16:29
+-->
+<reservations>
+        <reservation id="1">
+            <utilisateur_id>2</utilisateur_id>
+            <nom>BIACQUEL</nom>
+            <prenom>VERONIQUE</prenom>
+            <structure_id>1</structure_id>
+            <structure_nom>Ligue d'escrime Lorraine</structure_nom>
+            <structure_adresse>5, rue des trois épis 54600 Villers lès Nancy</structure_adresse>
+            <mail>biancquel.veronique23@llgescrime.fr</mail>   
+            <salle_id>6</salle_id>
+            <date>2023-06-06 00:00:00</date>
+            <periode>1</periode>
+        </reservation>
+ <reservation id="2">
+            <utilisateur_id>6</utilisateur_id>
+             <nom>ZUEL</nom>
+            <prenom>STEPHANIE</prenom>
+            <structure_id>7</structure_id>
+            <structure_nom>Fives Nordon</structure_nom>
+            <structure_adresse>5 Pl. Aimé Morot 54000 Nancy</structure_adresse>
+            <mail>zuel.s@fivesnordon.ue</mail>  
+            <salle_id>5</salle_id>
+            <date>2023-06-09 00:00:00</date>
+            <periode>2</periode>
+        </reservation>
+        <reservation id="3">
+            <utilisateur_id>6</utilisateur_id>
+             <nom>ZUEL</nom>
+            <prenom>STEPHANIE</prenom>
+            <structure_id>7</structure_id>
+            <structure_nom>Fives Nordon</structure_nom>
+            <structure_adresse>5 Pl. Aimé Morot 54000 Nancy</structure_adresse>
+            <mail>zuel.s@fivesnordon.ue</mail>  
+            <salle_id>10</salle_id>
+            <date>2023-06-09 00:00:00</date>
+            <periode>3</periode>
+        </reservation>
+ <reservation id="4">
+            <utilisateur_id>7</utilisateur_id>
+            <nom>LIEVIN</nom>
+            <prenom>NATHAN</prenom>
+            <structure_id>3</structure_id>
+            <structure_nom>FFT- COMITE DEPARTEMENTAL DE TENNIS DE MOSELLE</structure_nom>
+            <structure_adresse>42, rue de la commanderie 54840 Sexey les bois</structure_adresse>
+            <mail>lievinn@fft.fr</mail>   
+            <salle_id>4</salle_id>
+            <date>2023-06-07 00:00:00</date>
+            <periode>2</periode>
+        </reservation>
+</reservations>
