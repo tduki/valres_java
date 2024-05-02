@@ -1,6 +1,6 @@
 # Projet Valres
 
-## Objectif
+## Contexte et objectifs du projet
 Créer une application Bureau en Java qui via l'importation d'un fichier XML (réservations de la semaine et traitement) et un autre fichier XML
 appeller Utilisateur.xml qui est récupérer 1 fois chaque début d'années.
 Grâces à ses deux fichiers il sera possible de générer un bordereau sur le récapitulatif des réservations effectuées chaque semaines.
