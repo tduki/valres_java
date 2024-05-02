@@ -24,4 +24,6 @@ Plus orienté vers le code Java
 * Windows Builder (Package pour faire des GUI)
 * [Sérialisation](https://igm.univ-mlv.fr/~chilowi/lectures/content/java/cours/storage/serialization.std.html)
 
+## Modèle de classe UML : 
+![image](https://github.com/tduki/valres_java/assets/95369488/dd2d3cc3-0198-470d-9eef-ce15460f0005)
 
