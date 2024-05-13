@@ -25,7 +25,8 @@ public class Valres_Interface extends JFrame {
     private JPanel contentPane;
     private String xmlFilename;
     private static int numeroBordereau = 1;
-
+    private JLabel lblCheminFichier;
+    
     public Valres_Interface() {
         setTitle("Valres Interface");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,9 +35,12 @@ public class Valres_Interface extends JFrame {
         contentPane.setBorder(new EmptyBorder(20, 20, 20, 20)); // marge
         setContentPane(contentPane);
         contentPane.setLayout(new GridLayout(1, 2, 10, 10)); // style des boutons
-
-        JButton btnChargerXML = new JButton("Charger XML");
-        btnChargerXML.addActionListener(new ActionListener() {
+        contentPane.setLayout(new GridLayout(2, 1, 10, 10));
+        
+        
+        
+        JButton btnChargerXML1 = new JButton("Charger XML");
+        btnChargerXML1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers XML", "xml");
@@ -47,19 +51,25 @@ public class Valres_Interface extends JFrame {
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
                     xmlFilename = selectedFile.getAbsolutePath();
+                    lblCheminFichier.setText("Chemin du fichier sélectionné : " + xmlFilename); // Mise à jour de l'étiquette avec le chemin du fichier sélectionné
                     JOptionPane.showMessageDialog(null, "XML chargé avec succès.");
                 }
             }
         });
-        contentPane.add(btnChargerXML);
+        contentPane.add(btnChargerXML1);
 
+        // Création de l'étiquette pour afficher le chemin du fichier sélectionné
+        lblCheminFichier = new JLabel("Aucun fichier sélectionné");
+        contentPane.add(lblCheminFichier); // Ajout de l'étiquette
+        
+        
         JButton btnGenererPDF = new JButton("Générer PDF");
         btnGenererPDF.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (xmlFilename != null) {
                     try {
                         List<Reservation> lesReservations = ReservationRepository.getToutesLesReservations(xmlFilename);
-                        List<Client> lesClients = ClientRepository.getTousLesClients("C:\\Users\\hamni\\Documents\\APP-Valres-main\\utilisateur.xml");
+                        List<Client> lesClients = ClientRepository.getTousLesClients("E:\\HAMNICH\\valres_java\\utilisateur.xml");
 
                         genererBordereauPDF(lesReservations, lesClients);
                         JOptionPane.showMessageDialog(null, "Bordereau PDF généré avec succès.");
@@ -98,7 +108,7 @@ public class Valres_Interface extends JFrame {
 
             PDPageContentStream contentStream = new PDPageContentStream(document, page);
 
-            PDType0Font font = PDType0Font.load(document, new File("C:\\Users\\hamni\\Documents\\APP-Valres-main\\Helvetica.ttf"));
+            PDType0Font font = PDType0Font.load(document, new File("E:\\HAMNICH\\valres_java\\Helvetica.ttf"));
             contentStream.setFont(font, 12);
 
             float currentY = 700;
@@ -245,17 +255,5 @@ public class Valres_Interface extends JFrame {
         int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
         return weekNumber;
     }
-
-    // Méthode pour sauvegarder un utilisateur dans un fichier sérialisé
-    private void sauvegarderUtilisateur(Client utilisateur) {
-        try {
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("utilisateur.ser"));
-            oos.writeObject(utilisateur);
-            oos.close();
-            JOptionPane.showMessageDialog(null, "Utilisateur créé avec succès.");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erreur lors de la création de l'utilisateur.");
-        }
-    }
+   
 }
